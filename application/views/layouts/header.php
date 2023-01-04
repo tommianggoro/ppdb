@@ -1,0 +1,25 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="<?php echo base_url(); ?>">PPDB</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="<?php echo base_url(); ?>img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="<?php echo $this->uri->segment(3) == '/' ? 'active' : ''; ?>" href="<?php echo base_url(); ?>">Home</a></li>
+          <li><a class="<?php echo $this->uri->segment(3) == 'about' ? 'active' : ''; ?>" href="<?php echo base_url('about'); ?>">About</a></li>
+          <!-- <li><a href="courses.html">Courses</a></li>
+          <li><a href="trainers.html">Trainers</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="<?php echo base_url(); ?>register" class="get-started-btn">Yuk Daftar</a>
+
+    </div>
+  </header><!-- End Header -->

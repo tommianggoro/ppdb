@@ -20,10 +20,28 @@
                             </div>                            
                         <?php }
                     ?>
-                    <form action="<?php echo base_url(); ?>register" method="post" role="form">
+                    <form action="<?php echo base_url(); ?>register" method="post" role="form" autocomplete="off">
                         <div class="card mb-3">
                             <h3 class="card-header">
-                                A. Data Calon Peserta Didik Baru
+                                A. Data Pengguna
+                            </h3>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">E-mail</label>
+                                    <input type="email" class="form-control" id="email" placeholder="E-Mail" name="email" required value="<?php echo set_value('email'); ?>">
+                                    <?php echo form_error('email'); ?>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password" name="password" required value="<?php echo set_value('password'); ?>">
+                                    <?php echo form_error('password'); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3">
+                            <h3 class="card-header">
+                                B. Data Calon Peserta Didik Baru
                             </h3>
                             <div class="card-body">
                                 <div class="mb-3">
@@ -59,7 +77,7 @@
 
                         <div class="card mb-3">
                             <h3 class="card-header">
-                                B. Data Orang Tua / Pendaftar
+                                C. Data Orang Tua / Pendaftar
                             </h3>
                             <div class="card-body">
                                 <div class="mb-3">

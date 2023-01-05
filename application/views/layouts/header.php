@@ -5,11 +5,12 @@
       <h1 class="logo me-auto"><a href="<?php echo base_url(); ?>">PPDB</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="<?php echo base_url(); ?>img/logo.png" alt="" class="img-fluid"></a>-->
-
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="<?php echo $this->uri->segment(3) == '/' ? 'active' : ''; ?>" href="<?php echo base_url(); ?>">Home</a></li>
-          <li><a class="<?php echo $this->uri->segment(3) == 'about' ? 'active' : ''; ?>" href="<?php echo base_url('about'); ?>">About</a></li>
+          
+          <li><a class="<?php echo $this->uri->segment(1) == '/' || $this->uri->segment(1) == '' ? 'active' : ''; ?>" href="<?php echo base_url(); ?>">Home</a></li>
+          <li><a class="<?php echo $this->uri->segment(1) == 'about' ? 'active' : ''; ?>" href="<?php echo base_url('about'); ?>">About</a></li>
+          <li><a class="<?php echo $this->uri->segment(1) == 'login' ? 'active' : ''; ?>" href="<?php echo base_url('login'); ?>">Masuk</a></li>
           <!-- <li><a href="courses.html">Courses</a></li>
           <li><a href="trainers.html">Trainers</a></li>
           <li><a href="events.html">Events</a></li>

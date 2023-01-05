@@ -9,7 +9,6 @@ class Participant_model extends CI_Model{
 
     public function save($data = array()){
         $this->db->insert('participant', $data);
-
         return $this->db->insert_id();
     }
 }

@@ -5,6 +5,9 @@ class Auth extends MY_Controller {
         parent::__construct();
 
         $this->load->model('User_model', 'users');
+        $this->load->model('Profile_model', 'profile');
+        $this->load->model('Role_user_model', 'role_user');
+
     }
 
     public function index(){
@@ -25,12 +28,21 @@ class Auth extends MY_Controller {
             if($this->form_validation->run()){
                 $email = $this->input->post('email');
                 $password = $this->input->post('password');
-                $check = $this->users->getDataFromEmail($email);
+                $check = $this->users->getDataByEmail($email);
 
                 if(!empty($check)){
                     if(password_verify($password, $check->password)){
                         $this->session->set_userdata('is_login', TRUE);
+                        $this->session->set_userdata('id', $check->id);
                         $this->session->set_userdata('email', $check->email);
+                        $getProfile = $this->profile->getDataByUserId($check->id);
+                        $this->session->set_userdata('name', $getProfile->name);
+
+                        $role = $this->role_user->getRolesByUserId($check->id);
+                        if($role){
+                            $this->session->set_userdata('role_id', $role->role_id);
+                        }
+
                         redirect('backend/dashboard');
                     } else{
                         $this->session->set_flashdata('error', 'Password tidak sesuai');

@@ -130,7 +130,7 @@
 
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">No. Telpon</label>
-                                    <input type="text" class="form-control" id="phone" placeholder="Monor Telepon" name="phone" required value="<?php echo set_value('phone'); ?>">
+                                    <input type="text" class="form-control" id="phone" placeholder="No. Telepon" name="phone" required value="<?php echo set_value('phone'); ?>">
                                     <?php echo form_error('phone'); ?>
                                 </div>
                             </div>

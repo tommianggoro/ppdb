@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Participant_model extends CI_Model{
+
+	private $tableName = 'participant';
     public function __construct(){
         parent::__construct();
 
@@ -8,7 +10,7 @@ class Participant_model extends CI_Model{
     }
 
     public function save($data = array()){
-        $this->db->insert('participant', $data);
+        $this->db->insert($this->tableName, $data);
         return $this->db->insert_id();
     }
 }

@@ -34,7 +34,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        <h1 class="m-0"><?php echo empty($this->data['title']) ? 'Dashboard' : $this->data['title']; ?></h1>
                     </div><!-- /.col -->
 
                     <?php echo $this->load->view('backend/breadcrumbs', $this->data, true); ?>
@@ -79,8 +79,8 @@
         <script src="<?php echo base_url(); ?>assets/backend/plugins/chart.js/Chart.min.js"></script>
 
         <!-- AdminLTE for demo purposes -->
-        <script src="<?php echo base_url(); ?>assets/backend/dist/js/demo.js"></script>
+        <!-- <script src="<?php echo base_url(); ?>assets/backend/dist/js/demo.js"></script> -->
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="<?php echo base_url(); ?>assets/backend/dist/js/pages/dashboard2.js"></script>
+        <!-- <script src="<?php echo base_url(); ?>assets/backend/dist/js/pages/dashboard2.js"></script> -->
     </body>
 </html>

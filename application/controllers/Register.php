@@ -5,7 +5,7 @@ class Register extends MY_Controller {
                 parent::__construct();
 
                 $this->load->model('User_model', 'users');
-                $this->load->model('Participant_model', 'participant');
+                $this->load->model('Profile_model', 'profile');
         }
 	public function index(){
                 $this->_store();
@@ -64,9 +64,12 @@ class Register extends MY_Controller {
                                         'city' => $this->input->post('city'),
                                         'phone' => $this->input->post('phone'),
                                 );
-                                $save = $this->participant->save($inputData);
-
+                                $save = $this->profile->save($inputData);
+                                // var_dump($save);exit;
                                 if($save){
+                                        $this->load->model('Email_model');
+                                        $sent = $this->Email_model->send($inputUsers['email'], 'Registrasi PPDB SMK Harapan Massa');
+                                        // var_dump($sent);exit;
                                         $this->session->set_flashdata('success' , 'Data berhasil tersimpan');
                                         redirect('/register');
                                 }

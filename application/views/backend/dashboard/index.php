@@ -6,7 +6,7 @@
                 <div class="info-box">
                     <div class="info-box-content">
                         <span class="info-box-text">
-                            <h3>Selamat Datang, <?php echo $this->session->userdata('email'); ?></h3>
+                            <h3>Selamat Datang, <?php echo $this->session->userdata('name'); ?></h3>
                         </span>
                     </div>
                     <!-- /.info-box-content -->

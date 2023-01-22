@@ -8,9 +8,7 @@
       <div class="col-lg-3 col-md-6 footer-contact">
         <h3>SMP Harapan Massa</h3>
         <p>
-          Blk. G No.15, Leuwinanggung,<br>
-          Kec. Tapos, Kota Depok,<br>
-          Jawa Barat 16456<br><br>
+          Perum Depok Indah II Blok G No. 15, Beji Depok<br><br>
           <strong>Telp:</strong> (021)-777-3265<br>
           <strong>Email:</strong> smpharmas@gmail.com<br>
         </p>

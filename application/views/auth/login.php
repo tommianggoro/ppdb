@@ -25,7 +25,7 @@
             <div class="card card-outline card-primary">
                 
                 <div class="card-header text-center">
-                    <a href="<?php echo base_url('login'); ?>" class="h1"><b>PPDB</b><br/>SMP HM</a>
+                    <a href="<?php echo base_url('login'); ?>" class="h1"><b>PPDB</b><br/>SMP <br/>Harapan Massa</a>
                 </div>
                 <div class="card-body">
                     <form action="<?php echo base_url('login'); ?>" method="post">

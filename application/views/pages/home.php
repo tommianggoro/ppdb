@@ -17,24 +17,10 @@
             <img src="<?php echo base_url(); ?>assets/img/about.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Profile Sekolah</h3>
+            <h3>Profil Sekolah</h3>
             <p class="fst-italic">
-              SMP Harapan Massa Depok berdiri pada tahun 1970, di Kota Depok.
-              Mempunyai visi misi yang unggul dalam membangun identitas budaya, santun dalam berbahasa, dan sopan dalam bertindak.
-              Panggilan Keren “ Phesat “ – Pelita Satu.
-              Menjadi salah satu sekolah yang mengembangkan program sekolah 4.0,
-              Melalui : Coding, Content Creator, dan Lainnya.
-              Unggul dalam berprestasi.
+              SMP Harapan Massa Didirikan  pada tahun 1982, berlokasi di Komplek Depok Indah II Blok G No. 15 Beji Depok . Pada mulanya sekolah ini upaya menyediakan pendidikan masyarakat di sekitar Kecamatan Beji yang terjangkau untuk masyarakat sekitar. Tahun demi tahun SMP Harapan Massa selalu mengalami perkembangan/ kemajuan, baik dari segi kualitas maupun kuantitas.
             </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> Juara 1 Futsal Putra Bangsa CUP</li>
-              <li><i class="bi bi-check-circle"></i> Meraih Medali Emas ( Kejuaraan Silat Nasional )</li>
-              <li><i class="bi bi-check-circle"></i> Juara 3 Membaca Puisi Tingkat Nasional</li>
-              <li><i class="bi bi-check-circle"></i> Juara 1 Harapan Menulis Cerpen Tingkat Nasional</li>
-              <li><i class="bi bi-check-circle"></i> 5 Besar dalam Lomba FLS Tingkat Depok</li>
-              <li><i class="bi bi-check-circle"></i> Juara 3 Futsal Taruna Cup</li>
-              <li><i class="bi bi-check-circle"></i> 50 besar OSN Tingkat Jawa Barat</li>
-            </ul>
           </div>
         </div>
 
@@ -81,16 +67,8 @@
             <div class="content">
               <h3>Mengapa SMP Harapan Massa ??</h3>
               <p>
-                SMP Harapan Massa Depok berdiri pada tahun 1970, di Kota Depok.
-                Mempunyai visi misi yang unggul dalam membangun identitas budaya, santun dalam berbahasa, dan sopan dalam bertindak.
-                Panggilan Keren “ Phesat “ – Pelita Satu.
-                Menjadi salah satu sekolah yang mengembangkan program sekolah 4.0,
-                Melalui : Coding, Content Creator, dan Lainnya.
-                Unggul dalam berprestasi.
+                SMP Harapan Massa Didirikan  pada tahun 1982, berlokasi di Komplek Depok Indah II Blok G No. 15 Beji Depok . Pada mulanya sekolah ini upaya menyediakan pendidikan masyarakat di sekitar Kecamatan Beji yang terjangkau untuk masyarakat sekitar. Tahun demi tahun SMP Harapan Massa selalu mengalami perkembangan/ kemajuan, baik dari segi kualitas maupun kuantitas .
               </p>
-              <div class="text-center">
-                <a href="<?php echo base_url('about'); ?> class="more-btn">Selengkapnya <i class="bx bx-chevron-right"></i></a>
-              </div>
             </div>
           </div>
           <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -99,22 +77,30 @@
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-receipt"></i>
-                    <h4>Kultur Sekolah</h4>
-                    <p>Meningkatkan disiplin dan budi pekerti melalui kegiatan religius dan berbudaya tertib.</p>
+                    <h4>Visi</h4>
+                    <p>Berakhlak Mulia, Berbudaya dan Peduli Lingkungan</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-cube-alt"></i>
-                    <h4>Visi</h4>
-                    <p>Utama dalam moral, bermutu dalam ilmu, harmonis membangun identitas budaya.</p>
+                    <h4>Misi</h4>
+                    <ul>
+                      <li>Menumbuh kembangkan penghayatan dan pengamalan terhadap agama yang dianut untuk membentuk pribadi yang baik.</li>
+                      <li>Mewujudkan budaya 5S (Senyum, Salam, Sapa, Sopan, Santun).</li>
+                      <li>Mewujudkan budaya peduli lingkungan (pencegahan pencemarah, pencegahan kerusakan dan upaya pelestarian lingkungan hidup) bagi seluruh warga sekolah.</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-images"></i>
-                    <h4>Misi (1 & 2)</h4>
-                    <p>Menumbuhkan akhlak dan budi pekerti mulia siswa. Mengembangkan potensi intelektual siswa berkarakter.</p>
+                    <h4>Tujuan</h4>
+                    <ul>
+                      <li>Terbentuknya karakter siswa yang religius melalui kegiatan iman dan taqwa.</li>
+                      <li>Terbentuknya budaya 5S ( Senyum, Salam, Sapa, Sopan, Santun).</li>
+                      <li>Terwujudnya peserta didik yang memiliki kesadaran terhadap kelstarian lingkungan hidup disekitarnya</li>
+                    </ul>
                   </div>
                 </div>
               </div>

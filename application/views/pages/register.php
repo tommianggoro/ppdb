@@ -3,8 +3,28 @@
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
         <h2>Daftar</h2>
+        <p>Penerimaan Peserta Didik Baru SMP Harapan Massa
+<br/>
+Telah dibuka Pendaftaran Peserta Didik baru di SMP Harapan Massa untuk info lebih lanjut silahkan menghubungi nomor dibawah ini atau langsung mengunjungi sekolah kami. Terima kasih.
+<br/>
+Informasi Pendaftaran : 021 – 777 3265
+<br/>
+Lokasi : Perumahan Depok Indah II Blok. G Nomor 15, Beji Depok</p>
       </div>
     </div><!-- End Breadcrumbs -->
+
+    <section id="pamflet" class="register">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                    <img src="<?php echo base_url(); ?>assets/img/pamflet-1.jpg" class="img-fluid">
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                    <img src="<?php echo base_url(); ?>assets/img/pamflet-2.jpg" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ======= About Section ======= -->
     <section id="register" class="register">

@@ -27,8 +27,8 @@
   <?php echo $_css; ?>
 
   <!-- Template Main CSS File -->
+  
   <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
-
   <!-- =======================================================
   * Template Name: Mentor - v4.10.0
   * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/

@@ -9,7 +9,7 @@ class Role_user_model extends CI_Model{
         $this->load->database('default');
     }
 
-    public function save($data = array(), $id){
+    public function save($data, $id){
     	if($id){
     		$this->deleteByUserId($id);
     	}

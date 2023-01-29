@@ -9,12 +9,12 @@ class User_model extends CI_Model{
         $this->load->database('default');
     }
 
-    public function save($data = array()){
+    public function save($data){
         $this->db->insert($this->tableName, $data);
         return $this->db->insert_id();
     }
 
-    public function update($data = array(), $id){
+    public function update($data, $id){
         $this->db->where('id', $id);
         $this->db->update($this->tableName, $data);
         return $this->db->affected_rows();

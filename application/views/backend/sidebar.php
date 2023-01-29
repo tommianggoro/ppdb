@@ -33,7 +33,13 @@
                     <li class="nav-item">
                         <a href="<?php echo base_url('backend/users'); ?>" class="nav-link <?php echo $this->uri->segment(2) == 'users' ? 'active' : ''; ?>">
                             <i class="nav-icon fas fa-user-alt"></i>
-                            <p>Manage Users</p>
+                            <p>Kelola User</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('backend/role'); ?>" class="nav-link <?php echo $this->uri->segment(2) == 'role' ? 'active' : ''; ?>">
+                            <i class="nav-icon fas fa-user-alt"></i>
+                            <p>Kelola Role</p>
                         </a>
                     </li>
                 <?php endif; ?>

@@ -14,13 +14,13 @@ class Profile_model extends CI_Model{
         return $this->db->insert_id();
     }
 
-    public function update($data = array(), $id){
+    public function update($id, $data = array()){
         $this->db->where('id', $id);
         $this->db->update($this->tableName, $data);
         return $this->db->affected_rows();
     }
 
-    public function updateByUserId($data = array(), $id){
+    public function updateByUserId($id, $data = array()){
         $this->db->where('user_id', $id);
         $this->db->update($this->tableName, $data);
         return $this->db->affected_rows();

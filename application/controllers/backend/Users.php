@@ -77,7 +77,7 @@ class Users extends MY_Controller {
                 if(!$id){
                     $userSave = $this->users->save($dataUsers);
                 } else {
-                    $userSave = $this->users->update($dataUsers, $id);
+                    $userSave = $this->users->update($id, $dataUsers);
                 }
 
                 $dataProfile = array(
@@ -98,7 +98,7 @@ class Users extends MY_Controller {
                 if(!$id){
                     $profileSave = $this->profile->save($dataProfile);
                 } else {
-                    $profileSave = $this->profile->updateByUserId($dataProfile, $id);
+                    $profileSave = $this->profile->updateByUserId($id, $dataProfile);
                 }
 
                 $dataRoleUser = array(
@@ -106,7 +106,7 @@ class Users extends MY_Controller {
                     'user_id' => $userSave
                 );
                 
-                $this->role_users->save($dataRoleUser, $id);
+                $this->role_users->save($id, $dataRoleUser);
                 if(!$id)
                     $this->session->set_flashdata('success', 'Sukses menambah user');
                 else

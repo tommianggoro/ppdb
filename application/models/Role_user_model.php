@@ -9,16 +9,16 @@ class Role_user_model extends CI_Model{
         $this->load->database('default');
     }
 
-    public function save($data = array(), $id){
-    	if($id){
-    		$this->deleteByUserId($id);
+    public function save($userId, $data = array()){
+    	if($userId){
+    		$this->deleteByUserId($userId);
     	}
         $this->db->insert($this->tableName, $data);
         return $this->db->insert_id();
     }
 
-    public function deleteByUserId($id){
-    	$this->db->where('user_id', $id);
+    public function deleteByUserId($userId){
+    	$this->db->where('user_id', $userId);
     	$this->db->delete($this->tableName);
 
     	return $this->db->affected_rows();

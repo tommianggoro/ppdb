@@ -39,7 +39,7 @@
                             </div>                            
                         <?php }
                     ?>
-                    <form action="<?php echo base_url(); ?>register" method="post" role="form" autocomplete="off" id="formRegister" class="form-register">
+                    <form action="<?php echo base_url(); ?>register" method="post" role="form" autocomplete="off" id="formRegister" class="form-register" enctype="multipart/form-data">
                         <div class="card mb-3">
                             <h3 class="card-header">
                                 A. Data Pengguna
@@ -119,7 +119,6 @@
                                             <?php echo form_error('rt'); ?>
                                         </div>
                                     </div>
-                                    /
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label for="rw">RW</label>
@@ -152,6 +151,23 @@
                                     <input type="text" class="form-control" id="phone" placeholder="No. Telepon" name="phone" required value="<?php echo set_value('phone'); ?>">
                                     <?php echo form_error('phone'); ?>
                                 </div>
+
+                                <div class="mb-3">
+                                    <label for="document" class="form-label">Dokumen Pendukung <i style="font-size: 12px;">*Opsional</i></label>
+                                    <div id="documentPlace">
+                                        <div class="row mb-3">
+                                            <div class="col-lg-3">
+                                                <input type="file" name="documents[1]" accept="application/pdf" class="form-control"/>
+                                                <p style="font-style: italic;font-size:12px">*File maks. 2MB dan memiliki ekstensi .pdf</p>
+                                                <p style="color: red;font-size:12px" class="documentsError"></p>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <button type="button" class="btn btn-success addDocuments" data-id="1">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <div class="text-center">

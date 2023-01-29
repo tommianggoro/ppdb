@@ -17,21 +17,6 @@
                 </div>                            
             <?php }
         ?>
-        <div class="row">
-            <div class="col-12 col-sm-12">
-                <div class="info-box">
-                    <div class="info-box-content">
-                        <span class="info-box-text">
-                            <a href="<?php echo base_url('backend/users/add')?>" class="btn btn-primary">Tambah User</a>
-                        </span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-        </div>
-        <!-- /.row -->
 
         <div class="row">
           <div class="col-12">
@@ -41,23 +26,23 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Email</th>
+                      <th>Nama</th>
                       <th>Tanggal Dibuat</th>
-                      <th>Role</th>
+                      <th>Status</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php if(!empty($allUser)): ?>
-                        <?php foreach($allUser as $key => $value): ?>
+                    <?php if(!empty($allData)): ?>
+                        <?php foreach($allData as $key => $value): ?>
                             <tr>
                                 <td><?php echo $value->id; ?></td>
-                                <td><?php echo $value->email; ?></td>
+                                <td><?php echo $value->name; ?></td>
                                 <td><?php echo $value->created; ?></td>
                                 <td><?php echo $value->role_name; ?></td>
                                 <td>
-                                    <a href="<?php echo base_url('backend/users/edit/'.$value->id); ?>" class="btn btn-info"><i class="nav-icon fas fa-pencil-alt"></i></a>
-                                    <a href="<?php echo  base_url('backend/users/delete/'.$value->id); ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ??')"><i class="nav-icon fas fa-trash-alt"></i></a>
+                                    <a href="<?php echo base_url('backend/participant/edit/'.$value->id); ?>" class="btn btn-info"><i class="nav-icon fas fa-pencil-alt"></i></a>
+                                    <a href="<?php echo  base_url('backend/participant/delete/'.$value->id); ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ??')"><i class="nav-icon fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach;?>

@@ -31,6 +31,12 @@
                 </li>
                 <?php if($this->session->userdata('role_id') == 1): ?>
                     <li class="nav-item">
+                        <a href="<?php echo base_url('backend/participant'); ?>" class="nav-link <?php echo $this->uri->segment(2) == 'participant' ? 'active' : ''; ?>">
+                            <i class="nav-icon fas fa-user-alt"></i>
+                            <p>Kelola Peserta Didik</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="<?php echo base_url('backend/users'); ?>" class="nav-link <?php echo $this->uri->segment(2) == 'users' ? 'active' : ''; ?>">
                             <i class="nav-icon fas fa-user-alt"></i>
                             <p>Kelola User</p>

@@ -83,3 +83,10 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+/* Role contants */
+defined('ROLE_ADMINISTRATOR')  OR define('ROLE_ADMINISTRATOR', 1);
+defined('ROLE_CANDIDATE')    OR define('ROLE_CANDIDATE', 2);
+defined('ROLE_PASS')        OR define('ROLE_PASS', 3);
+defined('ROLE_NOT_PASS')        OR define('ROLE_NOT_PASS', 4);

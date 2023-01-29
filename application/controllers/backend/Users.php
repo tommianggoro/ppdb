@@ -104,7 +104,7 @@ class Users extends MY_Controller {
                 }
 
                 $dataRoleUser = array(
-                    'role_id' => 1,
+                    'role_id' => ROLE_ADMINISTRATOR,
                     'user_id' => $userSave
                 );
                 

@@ -65,7 +65,13 @@ class Register extends MY_Controller {
                                         'phone' => $this->input->post('phone'),
                                 );
                                 $save = $this->profile->save($inputData);
-                                // var_dump($save);exit;
+                                
+                                $dataRoleUser = array(
+                                        'role_id' => ROLE_CANDIDATE,
+                                        'user_id' => $userSave
+                                );
+                                $this->load->model('Role_user_model', 'role_user');
+                                $this->role_user->save($dataRoleUser, $userSave);
                                 if($save){
                                         $this->load->model('Email_model');
                                         $sent = $this->Email_model->send($inputUsers['email'], 'Registrasi PPDB SMK Harapan Massa');

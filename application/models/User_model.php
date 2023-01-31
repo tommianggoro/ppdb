@@ -9,7 +9,7 @@ class User_model extends CI_Model{
         $this->load->database('default');
     }
 
-    public function save($data = array()){
+    public function save($data){
         $this->db->insert($this->tableName, $data);
         return $this->db->insert_id();
     }
@@ -38,8 +38,12 @@ class User_model extends CI_Model{
     }
 
     public function getAllData(){
+        $this->db->select('users.id, users.email, users.created, role.name as role_name');
+        $this->db->join('role_user','user_id = users.id');
+        $this->db->join('role','role.id = role_user.role_id');
         $query = $this->db->get($this->tableName);
         if($query->num_rows()){
+            // var_dump($this->db->last_query());exit;
             return $query->result();
         }
         return null;

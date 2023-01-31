@@ -18,22 +18,22 @@ class Register extends MY_Controller {
 
         private function _store(){
                 if($this->input->post('submit')){
-                        // $this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
+                        $this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
                         $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
 
                         $this->form_validation->set_rules('name', 'Nama', 'required');
-                        // $this->form_validation->set_rules('nik', 'NIK', 'required|numeric');
-                        // $this->form_validation->set_rules('birth_place', 'Tempat Lahir', 'required');
-                        // $this->form_validation->set_rules('birth_date', 'Tanggal Lahir', 'required');
+                        $this->form_validation->set_rules('nik', 'NIK', 'required|numeric');
+                        $this->form_validation->set_rules('birth_place', 'Tempat Lahir', 'required');
+                        $this->form_validation->set_rules('birth_date', 'Tanggal Lahir', 'required');
 
-                        // $this->form_validation->set_rules('parent_name', 'Nama Orang Tua', 'required');
-                        // $this->form_validation->set_rules('address', 'Alamat', 'required');
-                        // $this->form_validation->set_rules('rt', 'RT', 'required|numeric');
-                        // $this->form_validation->set_rules('rw', 'RW', 'required|numeric');
-                        // $this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required');
-                        // $this->form_validation->set_rules('kelurahan', 'Kelurahan', 'required');
-                        // $this->form_validation->set_rules('city', 'Kabupaten / Kota', 'required');
-                        // $this->form_validation->set_rules('phone', 'No. Telpon', 'required|numeric');
+                        $this->form_validation->set_rules('parent_name', 'Nama Orang Tua', 'required');
+                        $this->form_validation->set_rules('address', 'Alamat', 'required');
+                        $this->form_validation->set_rules('rt', 'RT', 'required|numeric');
+                        $this->form_validation->set_rules('rw', 'RW', 'required|numeric');
+                        $this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required');
+                        $this->form_validation->set_rules('kelurahan', 'Kelurahan', 'required');
+                        $this->form_validation->set_rules('city', 'Kabupaten / Kota', 'required');
+                        $this->form_validation->set_rules('phone', 'No. Telpon', 'required|numeric');
 
                         $this->form_validation->set_message('numeric', '%s harus angka');
                         $this->form_validation->set_message('is_unique', '%s sudah terdaftar. Mohon menggunakan E-mail yang lain');
@@ -67,8 +67,17 @@ class Register extends MY_Controller {
                                         'phone' => $this->input->post('phone'),
                                 );
                                 $save = $this->profile->save($inputData);
+
                                 // $save = 9999;
                                 // var_dump($save);exit;
+                                
+                                $dataRoleUser = array(
+                                        'role_id' => ROLE_CANDIDATE,
+                                        'user_id' => $userSave
+                                );
+                                $this->load->model('Role_user_model', 'role_user');
+                                $this->role_user->save($dataRoleUser, $userSave);
+
                                 if($save){
                                         // var_dump(!empty($_FILES['documents']['name']), $_FILES);exit;
                                         $this->load->model('Documents_model', 'documents');
@@ -107,8 +116,6 @@ class Register extends MY_Controller {
                                                                 $images[$key]['upload_data'] = $config['upload_path'];//$this->upload->display_errors();
                                                         }
                                                 }
-
-                                                // var_dump($images);exit;
                                         }
                                         $this->load->model('Email_model');
                                         $sent = $this->Email_model->send($inputUsers['email'], 'Registrasi PPDB SMK Harapan Massa');

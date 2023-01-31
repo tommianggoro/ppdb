@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AdminLTE 3 | Dashboard 2</title>
+        <title>Admin Panel | <?php echo !empty($this->data['title']) ? $this->data['title'] : ''; ?></title>
 
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/backend/dist/css/adminlte.min.css">
+        <?php echo $_css; ?>
     </head>
     <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
@@ -78,9 +79,6 @@
         <!-- ChartJS -->
         <script src="<?php echo base_url(); ?>assets/backend/plugins/chart.js/Chart.min.js"></script>
 
-        <!-- AdminLTE for demo purposes -->
-        <!-- <script src="<?php echo base_url(); ?>assets/backend/dist/js/demo.js"></script> -->
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <!-- <script src="<?php echo base_url(); ?>assets/backend/dist/js/pages/dashboard2.js"></script> -->
+        <?php echo $_js; ?>
     </body>
 </html>

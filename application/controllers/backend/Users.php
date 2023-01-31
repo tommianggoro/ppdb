@@ -77,6 +77,7 @@ class Users extends MY_Controller {
                 if(!$id){
                     $userSave = $this->users->save($dataUsers);
                 } else {
+                    $dataUsers['updated'] = date('Y-m-d H:is');
                     $userSave = $this->users->update($id, $dataUsers);
                 }
 
@@ -98,11 +99,12 @@ class Users extends MY_Controller {
                 if(!$id){
                     $profileSave = $this->profile->save($dataProfile);
                 } else {
+                    $dataProfile['updated'] = date('Y-m-d H:is');
                     $profileSave = $this->profile->updateByUserId($id, $dataProfile);
                 }
 
                 $dataRoleUser = array(
-                    'role_id' => 1,
+                    'role_id' => ROLE_ADMINISTRATOR,
                     'user_id' => $userSave
                 );
                 

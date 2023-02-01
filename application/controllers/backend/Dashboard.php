@@ -11,6 +11,7 @@ class Dashboard extends MY_Controller {
     }
 
     public function index(){
+        $this->data['title'] = 'Dashboard';
         $this->data['contents'] = $this->load->view('backend/dashboard/index', $this->data, true);
         $this->load->view('backend/layouts', $this->data);
     }

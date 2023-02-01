@@ -3,9 +3,6 @@
 class Dummy extends MY_Controller {
     public function __construct(){
         parent::__construct();
-
-        
-
     }
 	public function send_mail(){
             $this->load->model('Email_model');
@@ -57,7 +54,7 @@ class Dummy extends MY_Controller {
             'user_id' => $userSave
         );
         
-        $this->role_users->save($dataRoleUser, $userSave);
+        $this->role_users->save($userSave, $dataRoleUser);
 
         echo "User ".$email." save as Admin ";
         exit;

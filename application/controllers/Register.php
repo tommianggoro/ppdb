@@ -6,6 +6,7 @@ class Register extends MY_Controller {
 
                 $this->load->model('User_model', 'users');
                 $this->load->model('Profile_model', 'profile');
+                $this->load->helper('file');
         }
 	public function index(){
                 $this->_store();
@@ -48,6 +49,7 @@ class Register extends MY_Controller {
                                 );
                                 
                                 $userSave = $this->users->save($inputUsers);
+                                // $userSave = 9999;
 
                                 $inputData = array(
                                         'user_id' => $userSave,
@@ -65,22 +67,72 @@ class Register extends MY_Controller {
                                         'phone' => $this->input->post('phone'),
                                 );
                                 $save = $this->profile->save($inputData);
+
+                                // $save = 9999;
+                                // var_dump($save);exit;
                                 
                                 $dataRoleUser = array(
                                         'role_id' => ROLE_CANDIDATE,
                                         'user_id' => $userSave
                                 );
                                 $this->load->model('Role_user_model', 'role_user');
-                                $this->role_user->save($dataRoleUser, $userSave);
+                                $this->role_user->save($userSave, $dataRoleUser);
+
                                 if($save){
+                                        // var_dump(!empty($_FILES['documents']['name']), $_FILES);exit;
+                                        $this->load->model('Documents_model', 'documents');
+                                        if(!empty($_FILES['documents']['name'])){
+                                                $config['upload_path']          = APPPATH.'../assets/uploads/';
+                                                $config['allowed_types']        = 'pdf';
+                                                $config['max_size']             = 2000;
+                                                $config['overwrite']            = TRUE;
+                                                $this->load->library('upload', $config);
+                                                $totData = count($_FILES['documents']['name']);
+                                                $files = $_FILES['documents'];
+                                                $images = array();
+                                                $this->_unlinkDocs($userSave);
+                                                foreach($files['name'] as $key => $val){
+                                                        $_FILES['document']['name']= $files['name'][$key];
+                                                        $_FILES['document']['type']= $files['type'][$key];
+                                                        $_FILES['document']['tmp_name']= $files['tmp_name'][$key];
+                                                        $_FILES['document']['error']= $files['error'][$key];
+                                                        $_FILES['document']['size']= $files['size'][$key];
+
+                                                        $fileName = $userSave.'_documents_'.$key;
+
+                                                        $images[$key]['file_name'] = $fileName;
+
+                                                        $config['file_name'] = $fileName;
+                                                        $this->upload->initialize($config);
+                                                        if ($this->upload->do_upload('document')) {
+                                                                $images[$key]['upload_data'] = $this->upload->data();
+                                                                $dataDocs = array(
+                                                                        'user_id' => $userSave,
+                                                                        'file_name' => $images[$key]['upload_data']['file_name']
+                                                                );
+                                                                $this->documents->saveDocs($dataDocs);
+
+                                                        } else {
+                                                                $images[$key]['upload_data'] = $config['upload_path'];//$this->upload->display_errors();
+                                                        }
+                                                }
+                                        }
                                         $this->load->model('Email_model');
                                         $sent = $this->Email_model->send($inputUsers['email'], 'Registrasi PPDB SMK Harapan Massa');
-                                        // var_dump($sent);exit;
                                         $this->session->set_flashdata('success' , 'Data berhasil tersimpan');
                                         redirect('/register');
                                 }
 
                         }
                 }
+        }
+
+
+        private function _unlinkDocs($userId){
+                $files = glob(APPPATH.'../assets/uploads/'.$userId.'_documents_*.pdf');
+                array_map('unlink', $files);
+
+                $this->load->model('Documents_model', 'documents');
+                $this->documents->delDocs($userId);
         }
 }

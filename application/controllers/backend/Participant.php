@@ -84,7 +84,7 @@ class Participant extends MY_Controller {
                         'city' => $this->input->post('city'),
                         'phone' => $this->input->post('phone'),
                 );
-                $save = $this->profile->updateByUserId($inputData, $id);
+                $save = $this->profile->updateByUserId($id, $inputData);
                 
                 $oldRole = $this->data['participantData']->role_id;
                 $newRole = $this->input->post('role');
@@ -92,7 +92,7 @@ class Participant extends MY_Controller {
                     'role_id' => $newRole,
                     'user_id' => $id
                 );
-                $roleSave = $this->role_user->save($dataRoleUser, $id);
+                $roleSave = $this->role_user->save($id, $dataRoleUser);
                 $this->session->set_flashdata('success', 'Sukses mengubah data');
 
                 if( ($oldRole != $newRole) && $newRole != ROLE_CANDIDATE ){
@@ -107,6 +107,8 @@ class Participant extends MY_Controller {
                 
             }
         }
+        $this->load->model('Documents_model', 'documents');
+        $this->data['documents'] = $this->documents->getDataByUser($id);
         $this->data['roles'] = $this->roles->getAllData();
         $this->data['_js'] = $this->load->view('backend/participant/_js', $this->data, TRUE);
         $this->data['_css'] = $this->load->view('backend/participant/_css', $this->data, TRUE);

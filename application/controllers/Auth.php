@@ -53,6 +53,7 @@ class Auth extends MY_Controller {
             }
             
         }
+        $this->data['title'] = 'Login';
         $this->load->view('auth/login', $this->data);
     }
 

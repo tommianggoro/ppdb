@@ -86,7 +86,9 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 
 /* Role contants */
-defined('ROLE_ADMINISTRATOR')  OR define('ROLE_ADMINISTRATOR', 1);
-defined('ROLE_CANDIDATE')    OR define('ROLE_CANDIDATE', 2);
-defined('ROLE_PASS')        OR define('ROLE_PASS', 3);
+defined('ROLE_ADMINISTRATOR')   OR define('ROLE_ADMINISTRATOR', 1);
+defined('ROLE_CANDIDATE')       OR define('ROLE_CANDIDATE', 2);
+defined('ROLE_PASS')            OR define('ROLE_PASS', 3);
 defined('ROLE_NOT_PASS')        OR define('ROLE_NOT_PASS', 4);
+
+defined('BASE_PATH')        OR define('BASE_PATH', APPPATH.'../');

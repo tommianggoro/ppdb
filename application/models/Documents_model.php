@@ -20,4 +20,13 @@ class Documents_model extends CI_Model{
         $this->db->insert($this->tableName, $data);
         return $this->db->insert_id();
     }
+
+    public function getDataByUser($id){
+        $this->db->where('user_id', $id);
+        $query = $this->db->get($this->tableName);
+        if($query->num_rows()){
+            return $query->result();
+        }
+        return null;
+    }
 }

@@ -149,6 +149,32 @@
                         </div>
                     </div>
                   </div>
+                  
+                  <?php if(!empty($documents)): ?>
+                    <?php foreach($documents as $key => $doc): ?>
+                      <?php if($key == 0 || $key %2 == 0): ?>
+                        <div class="row">
+                      <?php endif; ?>
+                          <div class="col-sm-6">
+                              <div class="">
+                                <embed 
+                                    src="<?php echo base_url().'assets/uploads/'.$doc->file_name; ?>" 
+                                    type="application/pdf"
+                                    frameBorder="0"
+                                    scrolling="auto"
+                                    height="500px"
+                                    width="100%"
+                                ></embed>
+                              </div>
+                          </div>
+                      <?php if($key == count($documents) - 1 || $key%2 == 1): ?>
+                              </div>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                  
+                          
+                        
 
                   <div class="row">
                     <div class="col-sm-12">

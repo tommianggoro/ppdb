@@ -76,7 +76,7 @@ class Register extends MY_Controller {
                                         'user_id' => $userSave
                                 );
                                 $this->load->model('Role_user_model', 'role_user');
-                                $this->role_user->save($dataRoleUser, $userSave);
+                                $this->role_user->save($userSave, $dataRoleUser);
 
                                 if($save){
                                         // var_dump(!empty($_FILES['documents']['name']), $_FILES);exit;
